@@ -15,12 +15,10 @@ const SpotifyCard: NextComponentType = () => {
       <div className="font-sen flex flex-row items-center gap-x-2 text-center text-lg text-gray-300">
         {data?.isPlaying ? (
           <>
-            <Link href={data?.songUrl} passHref>
-              <a className="flex items-center gap-x-4 cursor-pointer truncate">
-                <Image className=""
-                  src={data.albumImageUrl} width="60" height="60" alt={data?.title} />
-                <span className="text-white">{data?.title}</span>
-              </a>
+            <Link className="flex items-center gap-x-4 cursor-pointer truncate" href={data?.songUrl} passHref>
+              <Image className=""
+                src={data.albumImageUrl} width="60" height="60" alt={data?.title} />
+              <span className="text-white">{data?.title}</span>
             </Link>
             <div className="pb-8 pl-2">
               <Image

@@ -8,40 +8,43 @@ const Skills = () => {
       <div className="text-md my-8 flex flex-col font-medium md:text-xl custom:text-lg">
         <p className="flex flex-row items-center border-b-[0.1px] border-gray-500 py-1 text-slate-300">
           <BsArrowRightShort size="30" />
-          <span className="text-white">NextJS</span>
-          &nbsp;as my Frontend Framework
+          <span className="text-white">Angular 14 </span>
+          &nbsp;for robust Frontend development
         </p>
 
         <p className="flex flex-row items-center border-b-[0.1px] border-gray-500 py-1 text-slate-300">
           <BsArrowRightShort size="30" />
-          <span className="text-white">Typescript </span>
-          &nbsp;as my main language
+          <span className="text-white">RxJS </span>
+          &nbsp;for reactive programming in Angular
         </p>
 
         <p className="flex flex-row items-center border-b-[0.1px] border-gray-500 py-1 text-slate-300">
           <BsArrowRightShort size="30" />
-          <span className="text-white">Tailwind CSS </span>
-          &nbsp;as my CSS framework
+          <span className="text-white">Webpack </span>
+          &nbsp;for module federation and micro frontends
         </p>
 
         <p className="flex flex-row items-center border-b-[0.1px] border-gray-500 py-1 text-slate-300">
           <BsArrowRightShort size="30" />
-          <span className="text-white">Figma </span>
-          &nbsp;as my designing tool
+          <span className="text-white">AWS </span>
+          &nbsp;for cloud-based solutions and services
         </p>
 
         <p className="flex flex-row items-center border-b-[0.1px] border-gray-500 py-1 text-slate-300">
           <BsArrowRightShort size="30" />
-          <span className="text-white">Express JS </span>
-          &nbsp;as my API framework
+          <span className="text-white">SCSS </span>
+          &nbsp;for advanced styling solutions
+        </p>
+
+        {/* Additional skills based on your CV */}
+        <p className="text-lg font-medium text-slate-300">
+          ...more skills include <span className="text-white">TypeScript</span>,{" "}
+          <span className="text-white">NextJS</span>,{" "}
+          <span className="text-white">Tailwind CSS</span>,{" "}
+          <span className="text-white">Bootstrap</span>,{" "}
+          <span className="text-white">Express JS</span>
         </p>
       </div>
-
-      <p className="text-lg font-medium text-slate-300">
-        ...more skills include <span className="text-white">javascript</span>,{" "}
-        <span className="text-white">reactjs</span>,{" "}
-        <span className="text-white">fastapi </span>{" "}
-      </p>
     </div>
   );
 };

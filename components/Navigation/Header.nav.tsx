@@ -10,12 +10,12 @@ const TextLink: NextComponentType<NextPageContext, {}, linkProps> = ({
   url,
 }) => {
   return (
-    <a
+    <Link
       href={url}
       className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
     >
       {text}
-    </a>
+    </Link>
   );
 };
 
@@ -32,15 +32,11 @@ const Header: NextComponentType = () => {
         <TextLink text="Contact" url="#contact" />
       </p>
 
-      <Link href="https://github.com/andreidorinm" passHref>
-        <a
-          className="float-right mr-2 rounded-lg bg-zinc-800 p-2 text-2xl text-white ring-zinc-300 transition-all duration-150 hover:ring-2 sm:float-none sm:mr-0"
+      <Link href="https://github.com/andreidorinm" passHref className="float-right mr-2 rounded-lg bg-zinc-800 p-2 text-2xl text-white ring-zinc-300 transition-all duration-150 hover:ring-2 sm:float-none sm:mr-0"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="github-repo"
-        >
+          aria-label="github-repo">
           <VscGithubAlt />
-        </a>
       </Link>
     </header>
   );
