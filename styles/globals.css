@@ -1,0 +1,45 @@
+/* Global Styles (e.g., styles/global.css) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+.smooth-scroll-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-900;
+  }
+
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 6px; /* Even slimmer width */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1A202C; /* Background color of the scrollbar track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #a0a0a0; /* Thumb color */
+    border-radius: 4px; /* Rounded corners for the thumb */
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    height: 10px; /* Smaller height for a chic look */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #909090; /* Thumb color on hover */
+  }
+
+  /* Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #a0a0a0 #1A202C; /* Thumb and track color */
+  }
+}
