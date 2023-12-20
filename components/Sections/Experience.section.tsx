@@ -29,7 +29,7 @@ const Experience = () => {
             <div className="flex-1 ml-10">
               <div className="flex flex-col md:flex-row items-center justify-between py-1">
                 <div className="flex items-center text-slate-300 gap-2">
-                  <Image src={experience.logoUrl} alt={`${experience.company} Logo`} width={40} height={40} className="mb-4" />
+                  <Image src={experience.logoUrl} alt={`${experience.company} Logo`} width={40} height={40} className="" />
                   <h4 ref={headerRefs.current[index]} className="text-xl text-white mr-4">{experience.role} @ {experience.company}</h4>
                   <div className="flex items-center  bg-transparent">
                     {experience.technologies.map((techLogoUrl, techIndex) => (
