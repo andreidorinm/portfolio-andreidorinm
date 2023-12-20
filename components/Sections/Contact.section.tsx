@@ -8,10 +8,17 @@ import {
 } from "../Misc/Icons.collection";
 
 import { Icon } from "../Misc/Icon.component";
+import useRevealAnimation from "../../lib/useRevealAnimation";
+import { useEffect } from "react";
 
 const Contact: NextComponentType = () => {
+  const { ref, setupAnimation } = useRevealAnimation();
+
+  useEffect(() => {
+    setupAnimation();
+  }, [setupAnimation]);
   return (
-    <div className="px-3 font-sen" id="contact">
+    <div ref={ref} className="px-3 font-sen" id="contact">
       <p className="text-3xl font-bold text-white">Get in touch</p>
 
       <div className="my-8 flex flex-row justify-center gap-x-4">
@@ -28,8 +35,8 @@ const Contact: NextComponentType = () => {
           icon={<BsSpotify />}
           url="https://open.spotify.com/user/2hnfn6us3fslfrn80nrdwoopf"
         />
-        </div>
       </div>
+    </div>
   );
 };
 

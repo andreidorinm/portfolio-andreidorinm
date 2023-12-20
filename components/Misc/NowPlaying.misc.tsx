@@ -22,7 +22,6 @@ const SpotifyCard: NextComponentType = () => {
             </Link>
             <div className="pb-8 pl-2">
               <Image
-
                 src="/assests/spotify.svg"
                 width="20"
                 height="20"

@@ -2,7 +2,7 @@ import React, { useRef, RefObject, useEffect } from 'react';
 import ProgressBar from '../Misc/ProgressBar.misc';
 import Image from 'next/image';
 import useRevealAnimation from '../../lib/useRevealAnimation';
-import experiencesData from '../../lib/experiencesData';
+import experiencesData from '../../lib/data/experiencesData';
 
 const Experience = () => {
   const experienceRefs: RefObject<HTMLDivElement>[] = useRef(experiencesData.map(() => React.createRef<HTMLDivElement>())).current;
@@ -50,10 +50,6 @@ const Experience = () => {
           </div>
         </div>
       ))}
-
-      <p className="text-lg font-medium text-slate-300">
-        Additional experiences and education include...
-      </p>
     </div>
   );
 };

@@ -1,9 +1,19 @@
 import type { NextComponentType } from "next";
+
 import Image from "next/image";
+import useRevealAnimation from "../../lib/useRevealAnimation";
+import { useEffect } from "react";
+
 
 const About: NextComponentType = () => {
+  const { ref, setupAnimation } = useRevealAnimation();
+
+  useEffect(() => {
+    setupAnimation();
+  }, [setupAnimation]);
+  
   return (
-    <div className="my-8 flex flex-row items-center justify-between px-3 font-sen">
+    <div ref={ref} className="my-8 flex flex-row items-center justify-between px-3 font-sen">
       <div>
         <p className="text-3xl font-bold text-white">Andrei Mihaila</p>
         <p className="mt-1 text-lg text-gray-300">

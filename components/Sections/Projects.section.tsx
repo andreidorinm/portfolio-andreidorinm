@@ -1,30 +1,38 @@
-import type { NextComponentType } from "next";
-
+import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import projectsData from '../../lib/data/projectsData';
 
-const Projects: NextComponentType = () => {
+const getRandomColor = () => {
+  const colors = ['#D8B4FE', '#818CF8', '#FDE68A', '#FCA5A5', '#FECACA']; 
+  return colors[Math.floor(Math.random() * colors.length)];
+};
+
+const Projects = () => {
   return (
     <div className="my-16 px-3 font-sen" id="projects">
       <p className="text-3xl font-bold text-white">Featured Projects</p>
-      <div className="my-8 flex flex-col items-center justify-center gap-10 sm:flex-row" >
-        {/* <Image width={250} height={250} src="https://i.ibb.co/0cg2Lq7/ezgif-com-video-to-gif-converted.gif"></Image> */}
-        <Link href="https://vault3.live" passHref className="h-[7rem] w-[14rem] cursor-pointer rounded-lg bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-1 text-white duration-100 hover:scale-105"
-          target="_blank"
-          rel="noopener noreferrer">
-          <div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-primary px-2 text-center font-medium">
-            <p className="text-xl font-semibold">Vault3</p>
-            <p>Your safest decentralized vault</p>
-          </div>
-        </Link>
-        <Link href="https://github.com/avneesh0612/Orbits-UI" passHref className="h-[7rem] w-[14rem] cursor-pointer rounded-lg bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-1 text-white duration-100 hover:scale-105"
-          target="_blank"
-          rel="noopener noreferrer">
-          <div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-primary px-2 text-center font-medium">
-            <p className="text-xl font-semibold">Orbits UI</p>
-            <p>React component library built with Tailwind CSS</p>
-          </div>
-        </Link>
+      <div className="my-8 flex flex-col items-center justify-center gap-10 sm:flex-row">
+{projectsData.map((project, index) => {
+  const randomColor = getRandomColor(); // Get a random color for each card
+  return (
+    <div key={index} className="w-[14rem] h-[22rem] cursor-pointer">
+      <div className="card-flip">
+        <div className="card-front rounded-lg p-1 text-white" style={{ background: `linear-gradient(to right, ${randomColor}, ${randomColor})`, animation: 'colorShift 2s infinite ease-in-out' }}>
+          <Link href={project.url} passHref target="_blank" rel="noopener noreferrer">
+            <div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-primary px-2 text-center font-medium">
+              <p className="text-xl font-semibold">{project.title}</p>
+              <p>{project.description}</p>
+            </div>
+          </Link>
+        </div>
+        <div className="card-back rounded-lg bg-primary p-1 text-white">
+          <Image src={project.imageUrl} alt={project.title} layout="fill" objectFit="cover"/>
+        </div>
+      </div>
+    </div>
+  );
+})}
       </div>
     </div>
   );

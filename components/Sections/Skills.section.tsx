@@ -1,8 +1,16 @@
+import { useEffect } from "react";
 import { BsArrowRightShort } from "../Misc/Icons.collection";
+import useRevealAnimation from "../../lib/useRevealAnimation";
 
 const Skills = () => {
+  const { ref, setupAnimation } = useRevealAnimation();
+
+  useEffect(() => {
+    setupAnimation();
+  }, [setupAnimation]);
+
   return (
-    <div className="my-16 px-3 font-sen text-white" id="skills">
+    <div ref={ref} className="my-16 px-3 font-sen text-white" id="skills">
       <p className="text-3xl font-bold text-white">Skills & Uses</p>
 
       <div className="text-md my-8 flex flex-col font-medium md:text-xl custom:text-lg">

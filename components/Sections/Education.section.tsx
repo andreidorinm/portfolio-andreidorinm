@@ -1,12 +1,17 @@
-import React, { useRef, RefObject } from 'react';
+import React, { useRef, RefObject, useEffect } from 'react';
 import Image from 'next/image';
-import educationData from '../../lib/educationData';
+import educationData from '../../lib/data/educationData';
+import useRevealAnimation from '../../lib/useRevealAnimation';
 
 const Education = () => {
   const educationRefs: RefObject<HTMLDivElement>[] = useRef(educationData.map(() => React.createRef<HTMLDivElement>())).current;
+  const { ref, setupAnimation } = useRevealAnimation();
 
+  useEffect(() => {
+    setupAnimation();
+  }, [setupAnimation]);
   return (
-    <div className="my-16 px-3 font-sen text-white" id="education">
+    <div ref={ref} className="my-16 px-3 font-sen text-white" id="education">
       <h3 className="text-3xl font-bold text-white">Education</h3>
 
       {educationData.map((edu, index) => (
