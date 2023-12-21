@@ -4,7 +4,7 @@ const experiencesData = [
     company: 'BCR',
     description: [
       'Dedicated Angular Expert, enhancing the My Advisory Platform (MAP) used across all BCR banking branches in Romania.',
-      'Advanced Angular Techniques and Robust Development using Angular 14, RxJS, and Karma testing.',
+      'Advanced Angular Techniques and Robust Development using Angular 16, RxJS, and Karma testing.',
       'Innovative Strategies and Custom Design with SCSS and Bootstrap.',
       'Pioneered client-based architecture and microfrontends in MAP using module federation for streamlined deployment.',
       'Implemented the Repository Pattern for efficient data management and abstraction, enhancing code maintainability and scalability in MAP.',

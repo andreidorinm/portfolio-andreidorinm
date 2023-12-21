@@ -7,19 +7,6 @@
   scroll-behavior: smooth;
 }
 
-@keyframes colorShift {
-  0% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.2);
-  }
-  100% {
-    filter: brightness(1);
-  }
-}
-
-
 .card-flip {
   perspective: 1000px;
   height: 22rem; /* Adjust height for a playing card style */
@@ -52,8 +39,6 @@
   transform: rotateY(-180deg);
   position: relative;
 }
-
-
 
 .smooth-scroll-container {
   height: 100vh;
