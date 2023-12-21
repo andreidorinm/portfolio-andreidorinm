@@ -10,10 +10,10 @@ const Skills = () => {
   }, [setupAnimation]);
 
   return (
-    <div ref={ref} className="my-16 px-3 font-sen text-white" id="skills">
-      <p className="text-3xl font-bold">Skills & Uses</p>
+    <div ref={ref} className="my-8 sm:my-12 md:my-16 px-3 font-sen text-white" id="skills">
+      <p className="text-2xl sm:text-3xl font-bold">Skills & Uses</p>
 
-      <div className="my-8 flex flex-col font-medium text-md md:text-xl">
+      <div className="my-8 flex flex-col font-medium text-md md:text-lg lg:text-xl">
         {[
           { skill: "Angular 14", description: "for robust Frontend development" },
           { skill: "RxJS", description: "for reactive programming in Angular" },

@@ -29,17 +29,17 @@ const projectsData: ProjectData[] = [
       'https://seeklogo.com/images/M/mongodb-logo-D13D67C930-seeklogo.com.png',
       'https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png'
       ,],
-    url: "https://vault3.live",
+    url: "https://trilogyoptic.art/",
   },
-  {
-    title: "Proiect European",
-    tagline: "Work in progress",
-    detailedDescription: "Work in progress",
-    technologies: [,
-      'https://seeklogo.com/images/V/vuejs-logo-17D586B587-seeklogo.com.png',
-    ],
-    url: "https://vault3.live",
-  }
+  // {
+  //   title: "Proiect European",
+  //   tagline: "Work in progress",
+  //   detailedDescription: "Work in progress",
+  //   technologies: [,
+  //     'https://seeklogo.com/images/V/vuejs-logo-17D586B587-seeklogo.com.png',
+  //   ],
+  //   url: "https://vault3.live",
+  // }
 ];
 
 export default projectsData;
