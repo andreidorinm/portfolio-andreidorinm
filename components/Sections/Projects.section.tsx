@@ -48,7 +48,7 @@ const Projects = () => {
                   {/* Icons */}
                   {[0, 1, 2, 3].map((pos) => (
                     <div key={pos} className={`absolute ${pos % 2 === 0 ? 'top-2' : 'bottom-2'} ${pos < 2 ? 'left-2' : 'right-2'}`}>
-                      <Image src={project.technologies[pos]} alt="Tech Icon" width={40} height={40} />
+                      <Image src={project.technologies[pos]} alt="Tech Icon" width={35} height={35} />
                     </div>
                   ))}
                   <div className="project-description text-center text-white text-s m-2">
