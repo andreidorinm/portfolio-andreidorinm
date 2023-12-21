@@ -1,12 +1,10 @@
 import type { NextComponentType } from "next";
-
 import {
   BsSpotify,
   MdEmail,
   AiOutlineGithub,
   AiOutlineLinkedin
 } from "../Misc/Icons.collection";
-
 import { Icon } from "../Misc/Icon.component";
 import useRevealAnimation from "../../lib/useRevealAnimation";
 import { useEffect } from "react";
