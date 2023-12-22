@@ -40,7 +40,7 @@ const SpotifyCard = () => {
               width="30" // Smaller width on mobile
               height="30" // Smaller height on mobile
               alt="spotify icon"
-              className="md:w-40 md:h-40" // Adjust size on larger screens
+              className="md:w-10 md:h-10" // Adjust size on larger screens
             />
             <p className="text-sm md:text-base">I&apos;m currently not listening to anything.</p>
           </>
