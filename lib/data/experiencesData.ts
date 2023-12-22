@@ -57,7 +57,7 @@ const experiencesData = [
     ],
     dateRange: 'March 2022 - May 2022',
     location: 'Bucharest, Romania',
-    logoUrl: 'https://i.ibb.co/vc4njGh/trilogyoptic.png',
+    logoUrl: '/assets/trilogyoptic.png',
     technologies: [
       'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
       'https://seeklogo.com/images/R/redux-logo-9CA6836C12-seeklogo.com.png',
