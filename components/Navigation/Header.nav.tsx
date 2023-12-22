@@ -1,21 +1,54 @@
-import type { NextComponentType } from "next";
-import Link from "next/link";
-import { VscGithubAlt } from "../Misc/Icons.collection";
-import TextLink from "../Misc/TextLink.component";
-import MobileNav from "./MobileNav.nav";
+import { useState } from 'react';
+import Link from 'next/link';
+import { VscGithubAlt } from '../Misc/Icons.collection';
+import TextLink from '../Misc/TextLink.component';
 
-const Header: NextComponentType = () => {
+const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navigation = [
+    { name: 'Home', href: '#' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
+  ];
+
   return (
-    <header
-      className={`font-jost py-8 sm:flex sm:flex-row sm:items-center sm:justify-between`}
-    >
-      <p className="hidden sm:flex sm:flex-row sm:gap-x-4">
-        <TextLink text="Home" url="#" />
-        <TextLink text="Experience" url="#experience" />
-        <TextLink text="Skills" url="#skills" />
-        <TextLink text="Projects" url="#projects" />
-        <TextLink text="Contact" url="#contact" />
-      </p>
+    <header className="font-jost py-8 flex justify-between items-center">
+      <div>
+        <div className="hidden sm:flex sm:flex-row sm:gap-x-4">
+          {navigation.map((item) => (
+            <TextLink key={item.name} text={item.name} url={item.href} />
+          ))}
+        </div>
+
+        //fix this
+        {/* <button
+          className="sm:hidden p-2 text-gray-500 hover:text-gray-700"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {isMobileMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button> */}
+
+        <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} sm:hidden`}>
+          {navigation.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-200 font-bold"
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+      </div>
 
       <Link href="https://github.com/andreidorinm" passHref className="float-right mr-2 rounded-lg bg-zinc-800 p-2 text-2xl text-white ring-zinc-300 transition-all duration-150 hover:ring-2 sm:float-none sm:mr-0"
           target="_blank"

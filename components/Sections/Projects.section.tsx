@@ -73,19 +73,37 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    const swiperElement = swiperRef.current;
-    const handleTouchMove = (event) => {
-      event.preventDefault();
+    let startX, startY;
+
+    const handleTouchStart = (event) => {
+      if (swiperRef.current && swiperRef.current.contains(event.target)) {
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+        // Optionally, disable smooth scrolling here
+      }
     };
 
-    if (swiperElement) {
-      swiperElement.addEventListener('touchmove', handleTouchMove, { passive: false });
-    }
+    const handleTouchMove = (event) => {
+      if (startX === undefined || startY === undefined) return;
+
+      const currentX = event.touches[0].clientX;
+      const currentY = event.touches[0].clientY;
+      const diffX = Math.abs(currentX - startX);
+      const diffY = Math.abs(currentY - startY);
+
+      if (swiperRef.current && swiperRef.current.contains(event.target)) {
+        if (diffX > diffY) {
+          event.preventDefault();
+        }
+      }
+    };
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     return () => {
-      if (swiperElement) {
-        swiperElement.removeEventListener('touchmove', handleTouchMove, { passive: false });
-      }
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
     };
   }, [swiperRef]);
 
