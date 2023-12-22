@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "sass": "^1.49.10",
     "smooth-scrollbar": "^8.8.4",
+    "swiper": "^11.0.5",
     "swr": "^1.2.2"
   },
   "devDependencies": {

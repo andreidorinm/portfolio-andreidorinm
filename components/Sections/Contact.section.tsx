@@ -17,7 +17,7 @@ const Contact: NextComponentType = () => {
   }, [setupAnimation]);
   return (
     <div ref={ref} className="px-3 font-sen" id="contact">
-      <p className="text-3xl font-bold text-white">Get in touch</p>
+      <p className="text-2xl sm:text-3xl font-bold text-white">Get in touch</p>
 
       <div className="my-8 flex flex-row justify-center gap-x-4">
         <Icon icon={<AiOutlineGithub />} url="https://github.com/andreidorinm" />
