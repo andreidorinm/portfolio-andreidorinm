@@ -45,6 +45,18 @@
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .card-flip {
+    perspective: 7000px;
+    width: 10rem;  /* Smaller width for mobile */
+    height: 16rem; /* Smaller height for mobile */
+  }
+  .project-description {
+    font-size: 0.75rem;
+    line-height: 1rem
+  }
+}
+
 @layer base {
   body {
     @apply bg-zinc-900;

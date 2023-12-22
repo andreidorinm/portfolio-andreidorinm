@@ -1,7 +1,7 @@
 import React, { useRef, RefObject, useEffect } from 'react';
 import ProgressBar from '../Misc/ProgressBar.misc';
 import Image from 'next/image';
-import useRevealAnimation from '../../lib/useRevealAnimation';
+import useRevealAnimation from '../../lib/hooks/useRevealAnimation';
 import experiencesData from '../../lib/data/experiencesData';
 
 const Experience = () => {

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { BsArrowRightShort } from "../Misc/Icons.collection";
-import useRevealAnimation from "../../lib/useRevealAnimation";
+import useRevealAnimation from "../../lib/hooks/useRevealAnimation";
 
 const Skills = () => {
   const { ref, setupAnimation } = useRevealAnimation();

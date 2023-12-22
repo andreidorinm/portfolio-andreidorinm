@@ -1,5 +1,5 @@
 import Image from "next/image";
-import useRevealAnimation from "../../lib/useRevealAnimation";
+import useRevealAnimation from "../../lib/hooks/useRevealAnimation";
 import { useEffect } from "react";
 
 const About = () => {

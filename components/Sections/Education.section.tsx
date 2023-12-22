@@ -1,7 +1,7 @@
 import React, { useRef, RefObject, useEffect } from 'react';
 import Image from 'next/image';
 import educationData from '../../lib/data/educationData';
-import useRevealAnimation from '../../lib/useRevealAnimation';
+import useRevealAnimation from '../../lib/hooks/useRevealAnimation';
 
 const Education = () => {
   const educationRefs: RefObject<HTMLDivElement>[] = useRef(educationData.map(() => React.createRef<HTMLDivElement>())).current;

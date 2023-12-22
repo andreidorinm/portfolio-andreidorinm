@@ -1,23 +1,8 @@
-import type { NextComponentType, NextPageContext } from "next";
-
+import type { NextComponentType } from "next";
 import Link from "next/link";
 import { VscGithubAlt } from "../Misc/Icons.collection";
-
-import type { linkProps } from "../../@types/prop.types";
-
-const TextLink: NextComponentType<NextPageContext, {}, linkProps> = ({
-  text,
-  url,
-}) => {
-  return (
-    <Link
-      href={url}
-      className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
-    >
-      {text}
-    </Link>
-  );
-};
+import TextLink from "../Misc/TextLink.component";
+import MobileNav from "./MobileNav.nav";
 
 const Header: NextComponentType = () => {
   return (
