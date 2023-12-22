@@ -25,7 +25,7 @@ const SpotifyCard = () => {
             </Link>
             <div className="pb-4 md:pb-8 pl-1 md:pl-2">
               <Image
-                src="/assests/spotify.svg"
+                src="/assets/spotify.svg"
                 width="15" // Smaller width on mobile
                 height="15" // Smaller height on mobile
                 alt="spotify icon"
@@ -36,7 +36,7 @@ const SpotifyCard = () => {
         ) : (
           <>
             <Image
-              src="/assests/spotify.svg"
+              src="/assets/spotify.svg"
               width="30" // Smaller width on mobile
               height="30" // Smaller height on mobile
               alt="spotify icon"

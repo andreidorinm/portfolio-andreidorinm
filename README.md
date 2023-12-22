@@ -2,7 +2,7 @@
 
 Hello! I'm Andrei Mihaila, a Frontend Developer specializing in creating efficient, user-centric web applications.
 
-![Portfolio Demo](./public/assests/demo.png)
+![Portfolio Demo](./public/assets/demo.png)
 
 You can view the live version of my portfolio here: [Live Demo](https://andreidorinm.com)
 

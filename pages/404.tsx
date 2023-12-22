@@ -10,7 +10,7 @@ const ErrorPage: NextPage = () => {
     <>
       <div className="flex min-h-screen min-w-full flex-col justify-center bg-[#fafdfe]">
         <Image
-          src="/assests/404.svg"
+          src="/assets/404.svg"
           width="800"
           height="400"
           alt="404 illustration"
