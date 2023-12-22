@@ -31,7 +31,7 @@ const About = () => {
           />
         </div>
         <a
-          href="https://link_to_your_resume.com"
+          href="/Andrei_Dorin_Mihaila_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-3 border-2 border-gray-300 text-sm font-medium text-gray-300 hover:border-gray-400 hover:text-gray-400 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 resume-button"

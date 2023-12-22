@@ -34,26 +34,21 @@ function MyApp({ Component, pageProps }: AppProps) {
         title="Andrei Mihaila | Frontend Developer"
         titleTemplate="Andrei Mihaila | Frontend Developer"
         defaultTitle="Andrei Mihaila | Frontend Developer"
-        description="Hey! I'm Andrei Mihaila, A Frontend Developer, Blogger and a Student!"
+        description="Hey! I'm Andrei Mihaila, A Frontend Developer specialized in Angular"
         openGraph={{
-          url: "https://www.andreidorinm.tech/",
+          url: "https://www.andreidorinm.com/",
           title: "Andrei Mihaila | Frontend Developer",
           description:
-            "Hey! I'm Andrei Mihaila, A Frontend Developer, Blogger and a Student!",
+            "Hey! I'm Andrei Mihaila, A Frontend Developer specialized in Angular",
           images: [
             {
-              url: "https://res.cloudinary.com/ddum5vpp3/image/upload/v1643532760/og-image_dwcwhp.png",
+              url: "https://res.cloudinary.com/dlnywh1pc/image/upload/v1703260169/qtwiskyworhjyrc4s2mh.png",
               width: 800,
               height: 420,
               alt: "Andrei Mihaila | Frontend Developer",
             },
           ],
         }}
-        // twitter={{
-        //   handle: "@kr_anurag_",
-        //   site: "@kr_anurag_",
-        //   cardType: "summary_large_image",
-        // }}
         additionalMetaTags={[
           {
             property: "keywords",
