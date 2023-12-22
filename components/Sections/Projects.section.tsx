@@ -31,7 +31,7 @@ const Projects = () => {
   const [clicked, setClicked] = useState(Array(projectsData.length).fill(false));
 
   useEffect(() => {
-    setupAnimation(); 
+    setupAnimation();
   }, [setupAnimation]);
 
   useEffect(() => {
@@ -71,6 +71,23 @@ const Projects = () => {
       setClicked(newClicked);
     }
   };
+
+  useEffect(() => {
+    const swiperElement = swiperRef.current;
+    const handleTouchMove = (event) => {
+      event.preventDefault();
+    };
+
+    if (swiperElement) {
+      swiperElement.addEventListener('touchmove', handleTouchMove, { passive: false });
+    }
+
+    return () => {
+      if (swiperElement) {
+        swiperElement.removeEventListener('touchmove', handleTouchMove, { passive: false });
+      }
+    };
+  }, [swiperRef]);
 
   const renderProjectCard = (project, index) => {
     const randomColor = getRandomColor();
