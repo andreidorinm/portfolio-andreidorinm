@@ -3,12 +3,11 @@ const experiencesData = [
     role: 'Frontend Developer',
     company: 'BCR',
     description: [
-      'Dedicated Angular Expert, enhancing the My Advisory Platform (MAP) used across all BCR banking branches in Romania.',
-      'Advanced Angular Techniques and Robust Development using Angular 16, RxJS, and Karma testing.',
-      'Innovative Strategies and Custom Design with SCSS and Bootstrap.',
-      'Pioneered client-based architecture and microfrontends in MAP using module federation for streamlined deployment.',
-      'Implemented the Repository Pattern for efficient data management and abstraction, enhancing code maintainability and scalability in MAP.',
-      'Utilized Backend for Frontends (BFFs) approach to optimize the communication between frontend and backend services, improving performance and user experience in MAP.'
+      'Enhanced My Advisory Platform (MAP) with Angular expertise.',
+      'Implemented innovative strategies and custom design with SCSS and Bootstrap.',
+      'Pioneered microfrontends using module federation for streamlined deployment.',
+      'Improved code maintainability and scalability with the Repository Pattern.',
+      'Optimized frontend-backend communication with Backend for Frontends (BFFs) approach.',
     ],
     dateRange: 'July 2022 - Present',
     location: 'Bucharest, Romania',
@@ -26,12 +25,9 @@ const experiencesData = [
     role: 'Frontend Developer',
     company: 'Vasonim',
     description: [
-      'Focused on Remix and AWS technologies for advanced web application development.',
-      'Developed a web application for psychotherapists, enhancing client management and therapy tracking.',
-      'Proficient in Remix.run and AWS services like S3, EC2, and Lambda.',
-      'Created dynamic, user-friendly interfaces ensuring seamless user experiences.',
-      'Implemented security measures for data protection and compliance with health data regulations.',
-      'Optimized application performance for high-traffic use, ensuring smooth operation.'
+      'Developed advanced web applications using Remix and AWS technologies',
+      'Created a user-friendly application for psychotherapists with security measures.',
+      'Optimized performance for high-traffic use.'
     ],
     dateRange: 'June 2022 - June 2022',
     location: 'Bucharest, Romania',
@@ -48,12 +44,9 @@ const experiencesData = [
     role: 'Frontend Developer',
     company: 'Trilogy Optic',
     description: [
-      'Focused on developing e-commerce solutions using the React and MERN Stack for an online marketplace specializing in prescription glasses.',
-      'Engaged in Full-Stack E-commerce Development involving React, Redux, Express, Node.js, and MongoDB.',
-      'Played a key role in designing and implementing user interfaces and backend services for efficient and secure online shopping experiences.',
-      'Integrated PayPal API for streamlined and secure payment processing, enhancing customer convenience and trust.',
-      'Collaborated in a team environment to develop custom features tailored for the unique needs of prescription glass customers, ensuring a personalized shopping experience.',
-      'Implemented responsive web design practices to ensure optimal viewing experience across various devices, improving customer engagement and satisfaction.'
+      'Contributed to e-commerce solutions using React and MERN Stack.',
+      'Designed user interfaces and integrated PayPal API for secure payments.',
+      'Improved customer engagement with responsive web design.'
     ],
     dateRange: 'March 2022 - May 2022',
     location: 'Bucharest, Romania',

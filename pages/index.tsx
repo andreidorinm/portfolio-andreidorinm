@@ -1,9 +1,8 @@
-import Scrollbar from 'smooth-scrollbar';
-import { useEffect, useRef, lazy } from 'react';
+import { lazy, useRef } from 'react';
 import type { NextPage } from 'next';
-import { gsap } from 'gsap';
 import { Suspense } from 'react';
 import { Header } from '../components';
+import useDynamicScrollbar from '../lib/hooks/useDynamicScrollbar';
 
 // Lazy load components
 const About = lazy(() => import('../components/Sections/About.section'));
@@ -17,33 +16,10 @@ const NowPlaying = lazy(() => import('../components/Misc/NowPlaying.misc'));
 const Home: NextPage = () => {
   const scrollContainerRef = useRef(null);
 
-  useEffect(() => {
-    if (!scrollContainerRef.current) return;
-
-    const scrollbar = Scrollbar.init(scrollContainerRef.current, {
-      damping: 0.07,
-      alwaysShowTracks: true,
-    });
-
-    import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      ScrollTrigger.scrollerProxy('.smooth-scroll-container', {
-        scrollTop(value) {
-          return arguments.length ? scrollbar.scrollTop = value : scrollbar.scrollTop;
-        },
-        getBoundingClientRect() {
-          return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-        },
-        pinType: scrollContainerRef.current.style.transform ? "transform" : "fixed"
-      });
-
-      scrollbar.addListener(ScrollTrigger.update);
-    });
-  }, []);
+  useDynamicScrollbar(scrollContainerRef);
 
   return (
-    <div ref={scrollContainerRef} className="smooth-scroll-container" style={{ height: '100vh' }}>
+ <div ref={scrollContainerRef} className="smooth-scroll-container">
       <div className="px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
         <Header />
         <Suspense fallback={
@@ -64,5 +40,6 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
 
 export default Home;

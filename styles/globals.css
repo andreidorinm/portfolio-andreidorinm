@@ -9,7 +9,7 @@
 
 .card-flip {
   perspective: 1000px;
-  height: 22rem; /* Adjust height for a playing card style */
+  height: 22rem; 
 }
 
 .card-flip:hover .card-front {
@@ -27,8 +27,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%; /* Ensure full height */
-  width: 100%; /* Ensure full width */
+  height: 100%;
+  width: 100%; 
 }
 
 .card-front {
@@ -42,49 +42,51 @@
 
 .smooth-scroll-container {
   height: 100vh;
-  overflow: hidden;
+  overflow-y: auto; 
+}
+
+.smooth-scroll-container::-webkit-scrollbar {
+  width: 4px; 
+}
+
+.smooth-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(160, 160, 160, 0); 
+  transition: background-color 0.3s ease; 
+  border-radius:8px;
+}
+
+.smooth-scroll-container.scrollbar-visible::-webkit-scrollbar-thumb {
+  background: #a0a0a0; 
+}
+
+.smooth-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #909090; 
+}
+
+.smooth-scroll-container::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #a0a0a0 transparent; 
 }
 
 @media (max-width: 768px) {
   .card-flip {
     perspective: 7000px;
-    width: 10rem;  /* Smaller width for mobile */
-    height: 16rem; /* Smaller height for mobile */
+    width: 10rem; 
+    height: 16rem; 
   }
+
   .project-description {
     font-size: 0.75rem;
-    line-height: 1rem
+    line-height: 1rem;
   }
 }
 
 @layer base {
   body {
     @apply bg-zinc-900;
-  }
-
-  /* Custom scrollbar styles */
-  ::-webkit-scrollbar {
-    width: 6px; /* Even slimmer width */
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #1A202C; /* Background color of the scrollbar track */
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #a0a0a0; /* Thumb color */
-    border-radius: 4px; /* Rounded corners for the thumb */
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-    height: 10px; /* Smaller height for a chic look */
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #909090; /* Thumb color on hover */
-  }
-
-  /* Firefox */
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: #a0a0a0 #1A202C; /* Thumb and track color */
   }
 }
