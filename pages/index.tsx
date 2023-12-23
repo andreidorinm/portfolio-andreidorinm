@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   useDynamicScrollbar(scrollContainerRef);
 
   return (
- <div ref={scrollContainerRef} className="smooth-scroll-container">
+ <div ref={scrollContainerRef} className="smooth-scroll-container" style={{ height: '100vh' }}>
       <div className="px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
         <Header />
         <Suspense fallback={
