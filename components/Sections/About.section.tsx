@@ -24,6 +24,7 @@ const About = () => {
             height={112}
             className="rounded-full"
             alt="avatar"
+            loading="lazy"
           />
         </div>
         <p className="mt-4 text-gray-400 md:mt-1">
@@ -39,6 +40,7 @@ const About = () => {
             height={112}
             className="rounded-full"
             alt="avatar"
+            loading="lazy"
           />
         </div>
         <a

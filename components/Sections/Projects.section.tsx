@@ -38,7 +38,7 @@ const Projects = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -115,7 +115,7 @@ const Projects = () => {
 
     return (
       <Link key={index} href={project.url} passHref target="_blank" rel="noopener noreferrer"
-      prefetch={false}>
+        prefetch={false}>
         <div key={index} className="w-[14rem] h-[22rem] cursor-pointer card-flip" onClick={(e) => handleCardClick(index, project.url, e)}>
           {/* Front Face */}
           <div className={`card-front rounded-lg p-1 text-white ${clicked[index] ? 'flipped' : ''}`} style={cardStyle}>
@@ -132,8 +132,11 @@ const Projects = () => {
                 <Image
                   src={project.technologies[pos]}
                   alt="Tech Icon"
-                  layout="fill" // Use this to fill the parent container
-                  objectFit="contain"
+                  width="0"
+                  height="0"
+                  sizes="100vw"
+                  className="w-full h-auto"
+                  loading="lazy"
                 />
               </div>
             ))}

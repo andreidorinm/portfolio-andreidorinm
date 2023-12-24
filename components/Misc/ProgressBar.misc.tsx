@@ -6,53 +6,64 @@ const ProgressBar = ({ index, total, headerRefs }) => {
   const circleRef = useRef(null);
 
   useEffect(() => {
+    let progressBarAnimation, circleAnimation;
+
     const loadGSAP = async () => {
       const { ScrollTrigger } = await import('gsap/ScrollTrigger');
       gsap.registerPlugin(ScrollTrigger);
 
-      setTimeout(() => {
-        if (index < total - 1 && progressBarRef.current) {
-          const nextHeaderRef = headerRefs[index + 1]; // Get the next header ref
-          if (nextHeaderRef && nextHeaderRef.current) {
-            const offset = 42; // Define your offset value here
-            const currentPosition = circleRef.current.getBoundingClientRect().top + window.scrollY;
-            const nextPosition = nextHeaderRef.current.getBoundingClientRect().top + window.scrollY;
-            const height = nextPosition - currentPosition - offset; // Subtract the offset
+      if (index < total - 1 && progressBarRef.current) {
+        const nextHeaderRef = headerRefs[index + 1];
+        if (nextHeaderRef && nextHeaderRef.current) {
+          const offset = 42;
+          const currentPosition = circleRef.current.getBoundingClientRect().top + window.scrollY;
+          const nextPosition = nextHeaderRef.current.getBoundingClientRect().top + window.scrollY;
+          const height = nextPosition - currentPosition - offset;
 
-            gsap.fromTo(progressBarRef.current, 
-              { height: 0 }, 
-              {
-                height: `${height}px`, // Use the adjusted height
-                ease: "power1.inOut",
-                scrollTrigger: {
-                  trigger: circleRef.current,
-                  scroller: ".smooth-scroll-container",
-                  start: "top center",
-                  end: `+=${height}`,
-                  scrub: 1,
-                },
-              }
-            );
-          }
+          progressBarAnimation = gsap.fromTo(progressBarRef.current, 
+            { height: 0 }, 
+            {
+              height: `${height}px`,
+              ease: "power1.inOut",
+              scrollTrigger: {
+                trigger: circleRef.current,
+                scroller: ".smooth-scroll-container",
+                start: "top center",
+                end: `+=${height}`,
+                scrub: 1,
+              },
+            }
+          );
         }
-        if (circleRef.current) {
-          gsap.to(circleRef.current, {
-            backgroundColor: "#fff",
-            ease: "none",
-            scrollTrigger: {
-              trigger: circleRef.current,
-              scroller: ".smooth-scroll-container",
-              start: "top center",
-              end: "bottom center",
-              scrub: true,
-              toggleActions: "restart none none reverse",
-            },
-          });
-        }
-      }, 100); 
+      }
+
+      if (circleRef.current) {
+        circleAnimation = gsap.to(circleRef.current, {
+          backgroundColor: "#fff",
+          ease: "none",
+          scrollTrigger: {
+            trigger: circleRef.current,
+            scroller: ".smooth-scroll-container",
+            start: "top center",
+            end: "bottom center",
+            scrub: true,
+            toggleActions: "restart none none reverse",
+          },
+        });
+      }
     };
 
     loadGSAP();
+
+    return () => {
+      if (progressBarAnimation) {
+        progressBarAnimation.kill();
+      }
+      if (circleAnimation) {
+        circleAnimation.kill();
+      }
+      ScrollTrigger.getAll().forEach(st => st.kill());
+    };
   }, [index, total, headerRefs]);
 
   return (
