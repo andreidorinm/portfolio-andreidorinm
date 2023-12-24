@@ -107,3 +107,13 @@ html {
     @apply bg-zinc-900;
   }
 }
+
+@keyframes shiny-border {
+  0% {
+    border-image: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.8), rgba(255,255,255,0)) 1;
+  }
+  100% {
+    border-image: linear-gradient(270deg, rgba(255,255,255,0), rgba(255,255,255,0.8), rgba(255,255,255,0)) 1;
+  }
+}
+
