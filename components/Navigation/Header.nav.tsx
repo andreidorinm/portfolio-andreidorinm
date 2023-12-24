@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { VscGithubAlt } from '../Misc/Icons.collection';
+import { FaGithub } from '../Misc/Icons.collection';
 import TextLink from '../Misc/TextLink.component';
 
 const Header = () => {
@@ -41,7 +41,7 @@ const Header = () => {
           rel="noopener noreferrer"
           aria-label="github-repo"
           prefetch={false}>
-          <VscGithubAlt />
+          <FaGithub />
       </Link>
     </header>
   );

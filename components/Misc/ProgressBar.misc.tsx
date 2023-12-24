@@ -56,12 +56,8 @@ const ProgressBar = ({ index, total, headerRefs }) => {
     loadGSAP();
 
     return () => {
-      if (progressBarAnimation) {
-        progressBarAnimation.kill();
-      }
-      if (circleAnimation) {
-        circleAnimation.kill();
-      }
+      progressBarAnimation?.kill();
+      circleAnimation?.kill();
       ScrollTrigger.getAll().forEach(st => st.kill());
     };
   }, [index, total, headerRefs]);

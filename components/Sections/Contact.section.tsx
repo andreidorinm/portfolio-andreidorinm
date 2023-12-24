@@ -1,6 +1,5 @@
-import { AiOutlineGithub, AiOutlineLinkedin, MdEmail, BsSpotify } from "../Misc/Icons.collection";
+import { AiOutlineGithub, AiOutlineLinkedin, MdEmail, FaSpotify } from "../Misc/Icons.collection";
 import { Icon } from "../Misc/Icon.component";
-import ScrollToTopButton from "../Misc/ScrollToTopButton.component";
 
 const Contact = () => {
   return (
@@ -10,7 +9,7 @@ const Contact = () => {
         <Icon icon={<AiOutlineGithub />} url="https://github.com/andreidorinm" />
         <Icon icon={<AiOutlineLinkedin />} url="https://www.linkedin.com/in/andrei-mihaila-b75798211/" />
         <Icon icon={<MdEmail />} url="mailto:andrei.dorin00@gmail.com" />
-        <Icon icon={<BsSpotify />} url="https://open.spotify.com/user/2hnfn6us3fslfrn80nrdwoopf" />
+        <Icon icon={<FaSpotify />} url="https://open.spotify.com/user/2hnfn6us3fslfrn80nrdwoopf" />
       </div>
     </div>
   );

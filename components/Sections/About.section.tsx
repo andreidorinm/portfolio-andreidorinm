@@ -1,6 +1,7 @@
 import Image from "next/image";
 import useRevealAnimation from "../../lib/hooks/useRevealAnimation";
 import { useEffect } from "react";
+import Link from "next/link";
 
 const About = () => {
   const { ref, setupAnimation } = useRevealAnimation();
@@ -27,9 +28,14 @@ const About = () => {
             loading="lazy"
           />
         </div>
-        <p className="mt-4 text-gray-400 md:mt-1">
-          Frontend Developer at BCR, adept in creating efficient, user-centric web applications. <br></br> Passionate about learning and sharing tech insights.
-        </p>
+        <div className="mt-4 text-gray-400 md:mt-1">
+          <p>
+            Frontend Developer at BCR, adept in creating efficient, user-centric web applications.
+          </p>
+          <p>
+            Passionate about learning and sharing tech insights.
+          </p>
+        </div>
       </div>
       <div className="flex flex-col items-center md:order-2">
         {/* Avatar Image for Desktop */}
@@ -40,10 +46,10 @@ const About = () => {
             height={112}
             className="rounded-full"
             alt="avatar"
-            loading="lazy"
+            priority
           />
         </div>
-        <a
+        <Link
           href="/Andrei_Dorin_Mihaila_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
@@ -51,7 +57,7 @@ const About = () => {
           style={{ borderRadius: '18px' }}
         >
           Resume
-        </a>
+        </Link>
       </div>
     </div>
   );

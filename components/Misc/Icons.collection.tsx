@@ -1,13 +1,14 @@
-import { BsSpotify, BsArrowRightShort } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
-import { AiOutlineTwitter, AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
-import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { FaDiscord } from "react-icons/fa";
-import { VscGithubAlt } from "react-icons/vsc";
-
+import { FaSpotify } from "@react-icons/all-files/fa/FaSpotify";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { BsArrowRightShort } from "@react-icons/all-files/bs/BsArrowRightShort";
+import { MdEmail } from "@react-icons/all-files/md/MdEmail";
+import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
+import { AiOutlineGithub } from "@react-icons/all-files/ai/AiOutlineGithub";
+import { AiOutlineLinkedin } from "@react-icons/all-files/ai/AiOutlineLinkedin";
+import { HiOutlineArrowNarrowRight } from "@react-icons/all-files/hi/HiOutlineArrowNarrowRight";
+import { FaDiscord } from "@react-icons/all-files/fa/FaDiscord";
 
 export {
-  BsSpotify,
   MdEmail,
   AiOutlineTwitter,
   AiOutlineGithub,
@@ -15,5 +16,6 @@ export {
   HiOutlineArrowNarrowRight,
   BsArrowRightShort,
   FaDiscord,
-  VscGithubAlt,
+  FaGithub,
+  FaSpotify
 };
