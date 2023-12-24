@@ -1,4 +1,4 @@
-import { lazy, useRef } from 'react';
+import { lazy, useRef, useState } from 'react';
 import type { NextPage } from 'next';
 import { Suspense } from 'react';
 import { Header } from '../components';
@@ -12,11 +12,13 @@ const Education = lazy(() => import('../components/Sections/Education.section'))
 const Projects = lazy(() => import('../components/Sections/Projects.section'));
 const Contact = lazy(() => import('../components/Sections/Contact.section'));
 const NowPlaying = lazy(() => import('../components/Misc/NowPlaying.misc'));
+const ScrollToTopButton = lazy(() => import('../components/Misc/ScrollToTopButton.component'));
 
 const Home: NextPage = () => {
+  const [showScrollButton, setShowScrollButton] = useState(false);
   const scrollContainerRef = useRef(null);
 
-  useDynamicScrollbar(scrollContainerRef);
+  useDynamicScrollbar(scrollContainerRef, setShowScrollButton);
 
   return (
  <div ref={scrollContainerRef} className="smooth-scroll-container">
@@ -32,6 +34,7 @@ const Home: NextPage = () => {
           <Education />
           <Projects />
           <Contact />
+        {showScrollButton && <ScrollToTopButton />}
           <div className="flex justify-center">
             <NowPlaying />
           </div>

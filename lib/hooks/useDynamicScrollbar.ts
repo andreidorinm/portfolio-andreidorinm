@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
 
-const useDynamicScrollbar = (scrollContainerRef) => {
+const useDynamicScrollbar = (scrollContainerRef, setShowScrollButton) => {
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
 
     let hideScrollbarTimeout;
 
-    // Function to gradually fade out the scrollbar
     const fadeOutScrollbar = (duration = 300) => {
       let start = null;
 
@@ -35,19 +34,29 @@ const useDynamicScrollbar = (scrollContainerRef) => {
       hideScrollbarTimeout = setTimeout(() => fadeOutScrollbar(), 2000); // Start fade out after delay
     };
 
+    const handleScroll = () => {
+      // Logic to show/hide the scrollbar
+      showScrollbar();
+
+      // Logic to determine if the scroll-to-top button should be shown
+      const isAtBottom = scrollContainer.scrollHeight - scrollContainer.scrollTop <= scrollContainer.clientHeight + 100;
+      const isMobile = window.innerWidth <= 768;
+      setShowScrollButton(isAtBottom && isMobile);
+    };
+
     scrollContainer.addEventListener('mouseover', showScrollbar);
     scrollContainer.addEventListener('mouseout', hideScrollbar);
-    scrollContainer.addEventListener('scroll', showScrollbar);
+    scrollContainer.addEventListener('scroll', handleScroll);
 
     hideScrollbar();
 
     return () => {
       scrollContainer.removeEventListener('mouseover', showScrollbar);
       scrollContainer.removeEventListener('mouseout', hideScrollbar);
-      scrollContainer.removeEventListener('scroll', showScrollbar);
+      scrollContainer.removeEventListener('scroll', handleScroll);
       clearTimeout(hideScrollbarTimeout);
     };
-  }, [scrollContainerRef]);
+  }, [scrollContainerRef, setShowScrollButton]);
 };
 
 export default useDynamicScrollbar;

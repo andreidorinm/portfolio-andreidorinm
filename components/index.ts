@@ -6,4 +6,5 @@ export { default as Education } from "./Sections/Education.section";
 export { default as Projects } from "./Sections/Projects.section";
 export { default as Contact } from "./Sections/Contact.section";
 export { default as NowPlaying } from "./Misc/NowPlaying.misc";
+export { default as ScrollToTopButton } from "./Misc/ScrollToTopButton.component";
 

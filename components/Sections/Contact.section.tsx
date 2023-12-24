@@ -1,5 +1,6 @@
 import { AiOutlineGithub, AiOutlineLinkedin, MdEmail, BsSpotify } from "../Misc/Icons.collection";
 import { Icon } from "../Misc/Icon.component";
+import ScrollToTopButton from "../Misc/ScrollToTopButton.component";
 
 const Contact = () => {
   return (

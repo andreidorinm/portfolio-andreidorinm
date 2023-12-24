@@ -3,25 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import projectsData from '../../lib/data/projectsData';
+import useRevealAnimation from "../../lib/hooks/useRevealAnimation";
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import projectsData from '../../lib/data/projectsData';
-import useRevealAnimation from "../../lib/hooks/useRevealAnimation";
 
-let colorIndex = 0;
-const colors = [
-  '#D8B4FE', '#818CF8', '#FDE68A', '#FCA5A5', '#FECACA',
-  '#A7F3D0', '#FDBAF9', '#BDE0FE', '#FED7AA', '#C7D2FE',
-  '#FECDD3', '#A5B4FC', '#FEF3C7', '#F0ABFC', '#E0F2FE',
-  '#FBCFE8', '#D9F99D', '#FEE2E2', '#EDE9FE', '#FDE047',
+const metallicColors = [
+  '#C9B037', // Glittering Gold
+  '#9F9179', // Shiny Bronze
+  '#A97142', // Copper Shine
+  '#E6E8FA', // Gleaming Platinum
+  '#D7D7D7', // Sparkling Steel
+  '#ACACAC', // Glossy Aluminum
+  '#707070', // Gunmetal Grey
+  '#5D5C61', // Titanium Flash
+  '#B4B4B4', // Radiant Pewter
+  '#E5E4E2', // Bright Silver
 ];
-
-const getRandomColor = () => {
-  const color = colors[colorIndex % colors.length];
-  colorIndex++;
-  return color;
-};
 
 const Projects = () => {
   const { ref, setupAnimation } = useRevealAnimation();
@@ -38,6 +37,7 @@ const Projects = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
+    
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -52,9 +52,9 @@ const Projects = () => {
   }, [isMobile]);
 
   const handleCardClick = (index, url, event) => {
-    event.preventDefault(); 
-    event.stopPropagation(); 
-  
+    event.preventDefault();
+    event.stopPropagation();
+
     if (!isMobile) {
       window.open(url, '_blank', 'noopener noreferrer');
     } else {
@@ -63,7 +63,6 @@ const Projects = () => {
       setClicked(newClicked);
     }
   };
-  
 
   const handleFlipBack = (index, url) => {
     if (clicked[index]) {
@@ -111,8 +110,8 @@ const Projects = () => {
   }, [swiperRef]);
 
   const renderProjectCard = (project, index) => {
-    const randomColor = getRandomColor();
-    const cardStyle = { border: `4px solid ${randomColor}`, animation: 'colorShift 2s infinite ease-in-out' };
+    const staticColor = metallicColors[index % metallicColors.length];
+    const cardStyle = { border: `4px solid ${staticColor}` };
 
     return (
       <Link key={index} href={project.url} passHref target="_blank" rel="noopener noreferrer">
@@ -128,8 +127,13 @@ const Projects = () => {
           <div className={`card-back rounded-lg p-1 text-white bg-primary backdrop-blur-sm shadow-lg flex flex-col justify-center items-center ${clicked[index] ? 'flipped' : ''}`} onClick={() => handleFlipBack(index, project.url)} style={cardStyle}>
             {/* Icons */}
             {[0, 1, 2, 3].map((pos) => (
-              <div key={pos} className={`absolute ${pos % 2 === 0 ? 'top-2' : 'bottom-2'} ${pos < 2 ? 'left-2' : 'right-2'}`}>
-                <Image src={project.technologies[pos]} alt="Tech Icon" width={35} height={35} />
+              <div key={pos} className={`absolute ${pos % 2 === 0 ? 'top-2' : 'bottom-2'} ${pos < 2 ? 'left-2' : 'right-2'} tech-icon`}>
+                <Image
+                  src={project.technologies[pos]}
+                  alt="Tech Icon"
+                  layout="fill" // Use this to fill the parent container
+                  objectFit="contain"
+                />
               </div>
             ))}
             <div className="project-description text-center text-white text-base m-2">

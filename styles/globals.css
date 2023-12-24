@@ -69,12 +69,22 @@
   background: transparent; 
 }
 
+.tech-icon {
+  width: 35px;
+  height: 35px;
+}
+
 html {
   scrollbar-width: thin;
   scrollbar-color: #a0a0a0 transparent; 
 }
 
 @media (max-width: 768px) {
+  .tech-icon {
+    width: 25px;
+    height: 25px;
+  }
+  
   .smooth-scroll-container {
     min-height: 100vh;
     overflow-y: auto;
