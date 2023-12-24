@@ -13,7 +13,8 @@ const SpotifyCard = () => {
       <div className="font-sen flex flex-row items-center gap-x-2 text-center md:text-lg text-gray-300">
         {data?.isPlaying ? (
           <>
-            <Link className="flex items-center gap-x-2 md:gap-x-4 cursor-pointer truncate" href={data?.songUrl} passHref>
+            <Link className="flex items-center gap-x-2 md:gap-x-4 cursor-pointer truncate" href={data?.songUrl} passHref
+            prefetch={false}>
               <Image
                 src={data.albumImageUrl}
                 width={data?.isPlaying ? "40" : "60"} // Smaller width on mobile
@@ -29,7 +30,7 @@ const SpotifyCard = () => {
                 width="15" // Smaller width on mobile
                 height="15" // Smaller height on mobile
                 alt="spotify icon"
-                className="md:w-7 md:h-7" // Adjust size on larger screens
+                className="md:w-5 md:h-5" // Adjust size on larger screens
               />
             </div>
           </>

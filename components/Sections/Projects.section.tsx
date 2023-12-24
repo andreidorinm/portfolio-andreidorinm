@@ -114,7 +114,8 @@ const Projects = () => {
     const cardStyle = { border: `4px solid ${staticColor}` };
 
     return (
-      <Link key={index} href={project.url} passHref target="_blank" rel="noopener noreferrer">
+      <Link key={index} href={project.url} passHref target="_blank" rel="noopener noreferrer"
+      prefetch={false}>
         <div key={index} className="w-[14rem] h-[22rem] cursor-pointer card-flip" onClick={(e) => handleCardClick(index, project.url, e)}>
           {/* Front Face */}
           <div className={`card-front rounded-lg p-1 text-white ${clicked[index] ? 'flipped' : ''}`} style={cardStyle}>
