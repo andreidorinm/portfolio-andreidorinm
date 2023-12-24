@@ -3,17 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#__next {
-  display: flex;
-  flex-direction: column;
-}
-
-@media screen and (max-width: 320px) {
-  #__next {
-    display: flex
-  }
-}
-
 * {
   scroll-behavior: smooth;
 }
