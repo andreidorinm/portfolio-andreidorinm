@@ -52,15 +52,18 @@ const Projects = () => {
   }, [isMobile]);
 
   const handleCardClick = (index, url, event) => {
+    event.preventDefault(); 
+    event.stopPropagation(); 
+  
     if (!isMobile) {
       window.open(url, '_blank', 'noopener noreferrer');
     } else {
-      event.preventDefault();
       let newClicked = [...clicked];
       newClicked[index] = !newClicked[index];
       setClicked(newClicked);
     }
   };
+  
 
   const handleFlipBack = (index, url) => {
     if (clicked[index]) {
