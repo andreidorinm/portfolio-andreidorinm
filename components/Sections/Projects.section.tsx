@@ -24,15 +24,11 @@ const metallicColors = [
 ];
 
 const Projects = () => {
-  const { ref, setupAnimation } = useRevealAnimation();
+  const { ref } = useRevealAnimation();
   const [isMobile, setIsMobile] = useState(false);
   const [scrollBarWidth, setScrollBarWidth] = useState(0);
   const swiperRef = useRef(null);
   const [clicked, setClicked] = useState(Array(projectsData.length).fill(false));
-
-  useEffect(() => {
-    setupAnimation();
-  }, [setupAnimation]);
 
   useEffect(() => {
     const handleResize = () => {

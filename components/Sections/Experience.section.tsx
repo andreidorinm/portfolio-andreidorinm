@@ -1,4 +1,4 @@
-import React, { useRef, RefObject, useEffect } from 'react';
+import React, { useRef, RefObject } from 'react';
 import ProgressBar from '../Misc/ProgressBar.misc';
 import Image from 'next/image';
 import useRevealAnimation from '../../lib/hooks/useRevealAnimation';
@@ -7,11 +7,7 @@ import experiencesData from '../../lib/data/experiencesData';
 const Experience = () => {
   const experienceRefs: RefObject<HTMLDivElement>[] = useRef(experiencesData.map(() => React.createRef<HTMLDivElement>())).current;
   const headerRefs = useRef(experiencesData.map(() => React.createRef<HTMLHeadingElement>()));
-  const { ref, setupAnimation } = useRevealAnimation();
-
-  useEffect(() => {
-    setupAnimation();
-  }, [setupAnimation]);
+  const { ref } = useRevealAnimation();
 
   return (
     <div ref={ref} className="my-8 sm:my-12 md:my-16 px-3 font-sen text-white" id="experience">

@@ -1,14 +1,9 @@
 import Image from "next/image";
 import useRevealAnimation from "../../lib/hooks/useRevealAnimation";
-import { useEffect } from "react";
 import Link from "next/link";
 
 const About = () => {
-  const { ref, setupAnimation } = useRevealAnimation();
-
-  useEffect(() => {
-    setupAnimation();
-  }, [setupAnimation]);
+  const { ref } = useRevealAnimation();
 
   return (
     <div ref={ref} className="my-8 flex flex-col md:flex-row items-center justify-between px-3 font-sen" id="home">

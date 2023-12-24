@@ -1,13 +1,8 @@
-import { useEffect } from "react";
 import { BsArrowRightShort } from "../Misc/Icons.collection";
 import useRevealAnimation from "../../lib/hooks/useRevealAnimation";
 
 const Skills = () => {
-  const { ref, setupAnimation } = useRevealAnimation();
-
-  useEffect(() => {
-    setupAnimation();
-  }, [setupAnimation]);
+  const { ref } = useRevealAnimation();
 
   return (
     <div ref={ref} className="my-8 sm:my-12 md:my-16 px-3 font-sen text-white" id="skills">
