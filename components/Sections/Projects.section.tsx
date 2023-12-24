@@ -11,6 +11,7 @@ import 'swiper/css/pagination';
 
 const metallicColors = [
   '#C9B037', // Glittering Gold
+  '#4682B4', // Blue Metallic (example)
   '#9F9179', // Shiny Bronze
   '#A97142', // Copper Shine
   '#E6E8FA', // Gleaming Platinum
@@ -81,7 +82,6 @@ const Projects = () => {
       if (swiperRef.current && swiperRef.current.contains(event.target)) {
         startX = event.touches[0].clientX;
         startY = event.touches[0].clientY;
-        // Optionally, disable smooth scrolling here
       }
     };
 
