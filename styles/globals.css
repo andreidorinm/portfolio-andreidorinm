@@ -32,10 +32,12 @@
 }
 
 .card-front {
+  z-index: 2;
   transform: rotateY(0deg);
 }
 
 .card-back {
+  z-index: 1;
   transform: rotateY(-180deg);
   position: relative;
 }
