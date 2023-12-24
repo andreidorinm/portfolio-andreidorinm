@@ -15,7 +15,7 @@ const Experience = () => {
 
   return (
     <div ref={ref} className="my-8 sm:my-12 md:my-16 px-3 font-sen text-white" id="experience">
-      <h3 className="text-2xl sm:text-3xl font-bold text-white">Experience & Education</h3>
+      <h3 className="text-2xl sm:text-3xl font-bold text-white">Experience</h3>
 
       {experiencesData.map((experience, index) => (
         <div key={index} ref={experienceRefs[index]} className="my-4 sm:my-6 md:my-8 text-md md:text-lg lg:text-xl font-medium">

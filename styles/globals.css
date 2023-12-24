@@ -43,7 +43,7 @@
 }
 
 .smooth-scroll-container {
-  min-height: 100vh;
+  height: 100vh;
   overflow-y: auto;
 }
 
@@ -75,6 +75,11 @@ html {
 }
 
 @media (max-width: 768px) {
+  .smooth-scroll-container {
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
   .card-flip {
     perspective: 7000px;
     width: 10rem; 
