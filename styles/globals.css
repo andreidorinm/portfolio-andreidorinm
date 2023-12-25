@@ -76,6 +76,7 @@ html {
 }
 
 @media (max-width: 768px) {
+
   .tech-icon {
     width: 25px;
     height: 25px;
@@ -84,6 +85,10 @@ html {
   .smooth-scroll-container {
     min-height: 100vh;
     overflow-y: auto;
+  }
+
+  .smooth-scroll-container::-webkit-scrollbar-thumb {
+    background: transparent; /* Adjust as needed */
   }
 
   .card-flip {
