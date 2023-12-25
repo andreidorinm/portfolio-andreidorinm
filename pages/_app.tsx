@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             "Hey! I'm Andrei Mihaila, A Frontend Developer specialized in Angular",
           images: [
             {
-              url: "https://res.cloudinary.com/dlnywh1pc/image/upload/v1703260169/qtwiskyworhjyrc4s2mh.png",
+              url: "https://res.cloudinary.com/dlnywh1pc/image/upload/v1703544505/gradient_lam4wf.png",
               width: 800,
               height: 420,
               alt: "Andrei Mihaila | Frontend Developer",
