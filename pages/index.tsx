@@ -1,6 +1,5 @@
-import { Suspense, lazy, useEffect, useRef, useState } from 'react';
+import { Suspense, lazy, useRef, useState } from 'react';
 import type { NextPage } from 'next';
-import {  } from 'react';
 import { Header } from '../components';
 import useDynamicScrollbar from '../lib/hooks/useDynamicScrollbar';
 
