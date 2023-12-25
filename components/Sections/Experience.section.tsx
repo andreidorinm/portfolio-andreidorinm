@@ -10,7 +10,7 @@ const Experience = () => {
   const { ref } = useRevealAnimation();
 
   return (
-    <div ref={ref} className="my-8 sm:my-12 md:my-16 px-3 font-sen text-white" id="experience">
+    <div ref={ref} className="my-8 sm:my-12 md:my-16 px-3 font-sen text-white hidden-component" id="experience">
       <h3 className="text-2xl sm:text-3xl font-bold text-white">Experience</h3>
 
       {experiencesData.map((experience, index) => (

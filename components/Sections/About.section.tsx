@@ -6,7 +6,7 @@ const About = () => {
   const { ref } = useRevealAnimation();
 
   return (
-    <div ref={ref} className="my-8 flex flex-col md:flex-row items-center justify-between px-3 font-sen" id="home">
+    <div ref={ref} className="my-8 flex flex-col md:flex-row items-center justify-between px-3 font-sen hidden-component" id="home">
       <div className="md:order-1">
         <p className="text-3xl font-bold text-white">Andrei Mihaila</p>
         <p className="mt-1 text-lg text-gray-300">

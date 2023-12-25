@@ -4,7 +4,6 @@ import { gsap } from 'gsap';
 const useRevealAnimation = () => {
   const ref = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  let animation = null;  // Variable to store the GSAP animation instance
 
   useEffect(() => {
     const setupAnimation = async () => {
@@ -12,7 +11,7 @@ const useRevealAnimation = () => {
       gsap.registerPlugin(ScrollTrigger);
 
       if (ref.current) {
-        animation = gsap.fromTo(ref.current,
+        gsap.fromTo(ref.current,
           { x: -50, opacity: 0 },
           {
             x: 0,
@@ -34,11 +33,8 @@ const useRevealAnimation = () => {
 
     // Cleanup function
     return () => {
-      if (animation) {
-        animation.kill();
-      }
-      if (ScrollTrigger) {
-        ScrollTrigger.getAll().forEach(st => st.kill()); // Kill all ScrollTrigger instances
+      if (ref.current) {
+        gsap.killTweensOf(ref.current);
       }
     };
   }, []);

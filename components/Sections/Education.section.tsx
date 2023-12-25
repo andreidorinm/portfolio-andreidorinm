@@ -8,7 +8,7 @@ const Education = () => {
   const { ref } = useRevealAnimation();
 
   return (
-    <div ref={ref} className="my-16 px-3 font-sen text-white" id="education">
+    <div ref={ref} className="my-16 px-3 font-sen text-white hidden-component" id="education">
       <h3 className="text-2xl sm:text-3xl font-bold text-white">Education</h3>
 
       {educationData.map((edu, index) => (

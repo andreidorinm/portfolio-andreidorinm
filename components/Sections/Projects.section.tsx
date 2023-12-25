@@ -155,7 +155,7 @@ const Projects = () => {
   };
 
   return (
-    <div ref={ref} className="my-16 px-3 font-sen" id="projects">
+    <div ref={ref} className="my-16 px-3 font-sen hidden-component" id="projects">
       <p className="text-2xl sm:text-3xl font-bold text-white text-center">Featured Projects</p>
       {isMobile ? (
         <div className="flex flex-col items-center">
