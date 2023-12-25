@@ -3,12 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
 import { fetcher } from "../../lib/fetcher";
+import useRevealAnimation from "../../lib/hooks/useRevealAnimation";
 
 const SpotifyCard = () => {
   const { data } = useSWR<NowPlayingSong>("/api/now-playing", fetcher);
+  const { ref } = useRevealAnimation();
 
   return (
-    <div className="p-4 max-w-full rounded-lg shadow-lg border border-green-500 mb-3 spotify-card-container">
+    <div ref={ref} className="p-4 max-w-full rounded-lg shadow-lg border border-green-500 mb-3 hidden-component spotify-card-container">
       <div className="font-sen flex flex-row items-center gap-x-2 text-center md:text-lg text-gray-300">
         {data?.isPlaying ? (
           <>
