@@ -1,4 +1,4 @@
-import { Suspense, lazy, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import type { NextPage } from 'next';
 import {  } from 'react';
 import { Header } from '../components';
@@ -12,6 +12,8 @@ const Education = lazy(() => import('../components/Sections/Education.section'))
 const Projects = lazy(() => import('../components/Sections/Projects.section'));
 const Contact = lazy(() => import('../components/Sections/Contact.section'));
 const NowPlaying = lazy(() => import('../components/Misc/NowPlaying.misc'));
+const ScrollToTopButton = lazy(() => import('../components/Misc/ScrollToTopButton.component'));
+
 
 const Home: NextPage = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -38,6 +40,7 @@ const Home: NextPage = () => {
           </div>
         </Suspense>
       </div>
+      {showScrollButton && <ScrollToTopButton scrollContainerRef={scrollContainerRef} />}
     </div>
   );
 };
