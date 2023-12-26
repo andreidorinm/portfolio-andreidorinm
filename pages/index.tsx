@@ -1,4 +1,4 @@
-import { Suspense, lazy, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import type { NextPage } from 'next';
 import { Header } from '../components';
 import useDynamicScrollbar from '../lib/hooks/useDynamicScrollbar';
@@ -18,6 +18,18 @@ const Home: NextPage = () => {
   const scrollContainerRef = useRef(null);
 
   useDynamicScrollbar(scrollContainerRef, setShowScrollButton);
+
+  useEffect(() => {
+    const adjustHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    window.addEventListener('resize', adjustHeight);
+    adjustHeight(); // Initial adjustment
+
+    return () => window.removeEventListener('resize', adjustHeight);
+  }, []);
 
   return (
     <div ref={scrollContainerRef} className="smooth-scroll-container">

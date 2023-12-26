@@ -43,7 +43,7 @@
 }
 
 .smooth-scroll-container {
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   overflow-y: auto;
 }
 
@@ -76,6 +76,7 @@ html, body {
 }
 
 @media (max-width: 768px) {
+
   .tech-icon {
     width: 25px;
     height: 25px;
