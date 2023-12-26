@@ -1,11 +1,9 @@
-import { useState } from 'react';
 import Link from 'next/link';
 import { FaGithub } from '../Misc/Icons.collection';
 import TextLink from '../Misc/TextLink.component';
 import useRevealAnimation from '../../lib/hooks/useRevealAnimation';
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { ref } = useRevealAnimation();
 
   const navigation = [
@@ -23,17 +21,6 @@ const Header = () => {
         <div className="hidden sm:flex sm:flex-row sm:gap-x-4">
           {navigation.map((item) => (
             <TextLink key={item.name} text={item.name} url={item.href} />
-          ))}
-        </div>
-        <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} sm:hidden`}>
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-200 font-bold"
-            >
-              {item.name}
-            </a>
           ))}
         </div>
       </div>
