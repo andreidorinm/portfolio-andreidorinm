@@ -3,7 +3,6 @@ import type { NextPage } from 'next';
 import { About, Contact, Education, Experience, Header, NowPlaying, Projects, ScrollToTopButton, Skills } from '../components';
 import useDynamicScrollbar from '../lib/hooks/useDynamicScrollbar';
 
-
 const Home: NextPage = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const scrollContainerRef = useRef(null);
