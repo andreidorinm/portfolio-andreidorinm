@@ -70,7 +70,6 @@
 }
 
 @media (max-width: 768px) {
-
   .tech-icon {
     width: 25px;
     height: 25px;
@@ -85,6 +84,23 @@
     background: transparent; /* Adjust as needed */
   }
 
+  .smooth-scroll-container {
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .smooth-scroll-container::-webkit-scrollbar {
+    width: 4px; 
+  }
+  
+  .smooth-scroll-container::-webkit-scrollbar-thumb {
+    border-radius:8px;
+  }
+  
+  .smooth-scroll-container.scrollbar-visible::-webkit-scrollbar-thumb {
+    background: #a0a0a0; 
+  }
+
   .card-flip {
     perspective: 7000px;
     width: 10rem; 
@@ -94,10 +110,6 @@
   .project-description {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-
-  .spotify-card-container {
-    padding-bottom: 20px;
   }
 
   .scroll-to-top {

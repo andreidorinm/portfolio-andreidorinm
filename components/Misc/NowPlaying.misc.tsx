@@ -10,7 +10,7 @@ const SpotifyCard = () => {
   const { ref } = useRevealAnimation();
 
   return (
-    <div ref={ref} className="p-4 max-w-full rounded-lg shadow-lg border border-green-500 mb-3 hidden-component spotify-card-container">
+    <div ref={ref} className="p-4 rounded-lg shadow-lg border border-green-500 mb-3 hidden-component">
       <div className="font-sen flex flex-row items-center gap-x-2 text-center md:text-lg text-gray-300">
         {data?.isPlaying ? (
           <>
