@@ -1,4 +1,4 @@
-import { Suspense, lazy, useRef, useState } from 'react';
+import { lazy, useRef, useState } from 'react';
 import type { NextPage } from 'next';
 import { Header } from '../components';
 import useDynamicScrollbar from '../lib/hooks/useDynamicScrollbar';
@@ -24,10 +24,6 @@ const Home: NextPage = () => {
  <div ref={scrollContainerRef} className="smooth-scroll-container">
       <div className="px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
         <Header />
-        <Suspense fallback={
-          <div className="flex justify-center items-center h-screen">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
-          </div>}>
           <About />
           <Skills />
           <Experience />
@@ -37,7 +33,6 @@ const Home: NextPage = () => {
           <div className="flex justify-center">
             <NowPlaying />
           </div>
-        </Suspense>
       </div>
       {showScrollButton && <ScrollToTopButton scrollContainerRef={scrollContainerRef} />}
     </div>

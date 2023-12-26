@@ -80,13 +80,13 @@
     overflow-y: auto;
   }
 
-  .smooth-scroll-container::-webkit-scrollbar-thumb {
-    background: transparent; /* Adjust as needed */
-  }
-
   .smooth-scroll-container {
     height: 100vh;
     overflow-y: auto;
+  }
+
+  .smooth-scroll-container::-webkit-scrollbar-thumb {
+    background: transparent; /* Adjust as needed */
   }
   
   .smooth-scroll-container::-webkit-scrollbar {
