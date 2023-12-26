@@ -21,8 +21,8 @@ const Home: NextPage = () => {
   useDynamicScrollbar(scrollContainerRef, setShowScrollButton);
 
   return (
- <div ref={scrollContainerRef} className="smooth-scroll-container">
-      <div className="px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
+    <div className="smooth-scroll-container">
+      <div ref={scrollContainerRef} className="px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
         <Header />
         <Suspense fallback={
           <div className="flex justify-center items-center h-screen">

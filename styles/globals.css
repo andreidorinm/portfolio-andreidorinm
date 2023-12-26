@@ -69,6 +69,12 @@
   transform: translateX(-50px);
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 @media (max-width: 768px) {
   .tech-icon {
     width: 25px;
