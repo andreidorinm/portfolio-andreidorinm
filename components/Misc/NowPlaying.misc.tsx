@@ -8,7 +8,7 @@ const SpotifyCard = () => {
   const { data } = useSWR<NowPlayingSong>("/api/now-playing", fetcher);
 
   return (
-    <div className="p-4 rounded-lg shadow-lg border border-green-500 mb-3 hidden-component">
+    <div className="p-4 rounded-lg shadow-lg border border-green-500 mb-3">
       <div className="font-sen flex flex-row items-center gap-x-2 text-center md:text-lg text-gray-300">
         {data?.isPlaying ? (
           <>

@@ -74,32 +74,6 @@
     width: 25px;
     height: 25px;
   }
-  
-  .smooth-scroll-container {
-    min-height: 100vh;
-    overflow-y: auto;
-  }
-
-  .smooth-scroll-container {
-    height: 100vh;
-    overflow-y: auto;
-  }
-
-  .smooth-scroll-container::-webkit-scrollbar-thumb {
-    background: transparent; /* Adjust as needed */
-  }
-  
-  .smooth-scroll-container::-webkit-scrollbar {
-    width: 4px; 
-  }
-  
-  .smooth-scroll-container::-webkit-scrollbar-thumb {
-    border-radius:8px;
-  }
-  
-  .smooth-scroll-container.scrollbar-visible::-webkit-scrollbar-thumb {
-    background: #a0a0a0; 
-  }
 
   .card-flip {
     perspective: 7000px;
