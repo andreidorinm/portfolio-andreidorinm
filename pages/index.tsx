@@ -13,7 +13,6 @@ const Contact = lazy(() => import('../components/Sections/Contact.section'));
 const NowPlaying = lazy(() => import('../components/Misc/NowPlaying.misc'));
 const ScrollToTopButton = lazy(() => import('../components/Misc/ScrollToTopButton.component'));
 
-
 const Home: NextPage = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const scrollContainerRef = useRef(null);
@@ -21,8 +20,8 @@ const Home: NextPage = () => {
   useDynamicScrollbar(scrollContainerRef, setShowScrollButton);
 
   return (
-    <div className="smooth-scroll-container">
-      <div ref={scrollContainerRef} className="px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
+    <div ref={scrollContainerRef} className="smooth-scroll-container">
+      <div className="px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
         <Header />
         <Suspense fallback={
           <div className="flex justify-center items-center h-screen">
