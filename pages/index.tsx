@@ -1,17 +1,7 @@
-import { lazy, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import type { NextPage } from 'next';
-import { Header } from '../components';
+import { About, Contact, Education, Experience, Header, NowPlaying, Projects, ScrollToTopButton, Skills } from '../components';
 import useDynamicScrollbar from '../lib/hooks/useDynamicScrollbar';
-
-// Lazy load components
-const About = lazy(() => import('../components/Sections/About.section'));
-const Skills = lazy(() => import('../components/Sections/Skills.section'));
-const Experience = lazy(() => import('../components/Sections/Experience.section'));
-const Education = lazy(() => import('../components/Sections/Education.section'));
-const Projects = lazy(() => import('../components/Sections/Projects.section'));
-const Contact = lazy(() => import('../components/Sections/Contact.section'));
-const NowPlaying = lazy(() => import('../components/Misc/NowPlaying.misc'));
-const ScrollToTopButton = lazy(() => import('../components/Misc/ScrollToTopButton.component'));
 
 
 const Home: NextPage = () => {
