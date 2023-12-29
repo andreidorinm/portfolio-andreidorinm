@@ -10,7 +10,7 @@ const Skills = () => {
 
       <div className="my-8 flex flex-col font-medium text-md md:text-lg lg:text-xl">
         {[
-          { skill: "Angular 14", description: "for robust Frontend development" },
+          { skill: "Angular 16", description: "for robust Frontend development" },
           { skill: "RxJS", description: "for reactive programming in Angular" },
           { skill: "Webpack", description: "for module federation and micro frontends" },
           { skill: "AWS", description: "for cloud-based solutions and services" },
