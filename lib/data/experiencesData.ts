@@ -11,7 +11,7 @@ const experiencesData = [
     ],
     dateRange: 'July 2022 - Present',
     location: 'Bucharest, Romania',
-    logoUrl: 'https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-6/325137668_1327204991378542_2288095938277077163_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=0-0FbD6ybs4AX-4hqk2&_nc_ht=scontent.fotp3-2.fna&oh=00_AfAh0C2wicMyZeOOHzautwrTdRQxpuTNbZgVySImrRfmvg&oe=658644F4',
+    logoUrl: '/assets/bcr.jpg',
     technologies: [
       'https://seeklogo.com/images/A/angular-icon-logo-5FC0C40EAC-seeklogo.com.png',
       'https://seeklogo.com/images/R/rxjs-logo-1C13E67498-seeklogo.com.png',
