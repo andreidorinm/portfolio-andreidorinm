@@ -149,7 +149,7 @@ const Projects = () => {
     const scrollbar = document.getElementById('custom-scrollbar');
     if (scrollbar) {
       const progress = swiper.progress;
-      const position = progress * (139 - scrollBarWidth);
+      const position = progress * (428 - scrollBarWidth);
       scrollbar.style.transform = `translateX(${position}%)`;
     }
   };

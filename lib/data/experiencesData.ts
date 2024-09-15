@@ -23,32 +23,13 @@ const experiencesData = [
   },
   {
     role: 'Frontend Developer',
-    company: 'Vasonim',
-    description: [
-      'Developed advanced web applications using Remix and AWS technologies',
-      'Created a user-friendly application for psychotherapists with security measures.',
-      'Optimized performance for high-traffic use.'
-    ],
-    dateRange: 'June 2022 - June 2022',
-    location: 'Bucharest, Romania',
-    logoUrl: 'https://www.vasonim.com/images/logo.png',
-    technologies: [
-      'https://www.remix.cool/img/remix-R.webp',
-      'https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png',
-      'https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png',
-      'https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png',
-      'https://seeklogo.com/images/N/npm-node-package-manager-logo-DE93649ED1-seeklogo.com.png'
-    ]
-  },
-  {
-    role: 'Frontend Developer',
     company: 'Trilogy Optic',
     description: [
       'Contributed to e-commerce solutions using React and MERN Stack.',
       'Designed user interfaces and integrated PayPal API for secure payments.',
       'Improved customer engagement with responsive web design.'
     ],
-    dateRange: 'March 2022 - May 2022',
+    dateRange: 'October 2020 - June 2022',
     location: 'Bucharest, Romania',
     logoUrl: '/assets/trilogyoptic.png',
     technologies: [
@@ -56,7 +37,9 @@ const experiencesData = [
       'https://seeklogo.com/images/R/redux-logo-9CA6836C12-seeklogo.com.png',
       'https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png',
       'https://seeklogo.com/images/M/mongodb-logo-D13D67C930-seeklogo.com.png',
-      'https://seeklogo.com/images/N/npm-node-package-manager-logo-DE93649ED1-seeklogo.com.png'
+      'https://seeklogo.com/images/P/paypal-logo-481A2E654B-seeklogo.com.png',
+      'https://seeklogo.com/images/N/npm-node-package-manager-logo-DE93649ED1-seeklogo.com.png',
+      'https://seeklogo.com/images/S/shopify-logo-1C711BCDE4-seeklogo.com.png'
     ]
   },
 ];

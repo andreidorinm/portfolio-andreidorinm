@@ -29,6 +29,11 @@ module.exports = {
       },
       {
         protocol: 'https',
+        hostname: 'd1.awsstatic.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
         hostname: 'scontent.fotp3-2.fna.fbcdn.net',
         pathname: '**',
       },

@@ -8,7 +8,7 @@
 }
 
 .card-flip {
-  perspective: 1000px;
+  perspective: 8000px;
   height: 22rem; 
 }
 
@@ -95,8 +95,8 @@ html, body {
 
   .scroll-to-top {
     position: fixed;
-    top: 20px; /* Distance from bottom */
-    left: 90%; /* Center horizontally */
+    left: 26rem;
+    bottom: 20px;
     transform: translateX(-50%); /* Adjust for exact centering */
     padding: 8px;
     border: solid 2px;
