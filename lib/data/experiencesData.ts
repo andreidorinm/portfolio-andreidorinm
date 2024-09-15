@@ -3,11 +3,10 @@ const experiencesData = [
     role: 'Frontend Developer',
     company: 'BCR',
     description: [
-      'Enhanced My Advisory Platform (MAP) with Angular expertise.',
-      'Implemented innovative strategies and custom design with SCSS and Bootstrap.',
-      'Pioneered microfrontends using module federation for streamlined deployment.',
-      'Improved code maintainability and scalability with the Repository Pattern.',
-      'Optimized frontend-backend communication with Backend for Frontends (BFFs) approach.',
+      'Enhanced MAP with Angular 16, RxJS, and SCSS.',
+      'Implemented custom designs and microfrontends via module federation.',
+      'Boosted code maintainability with the Repository Pattern and BFF architecture.',
+      'Led Docker orchestration and K8s releases, documented in Confluence.'
     ],
     dateRange: 'July 2022 - Present',
     location: 'Bucharest, Romania',
@@ -25,9 +24,10 @@ const experiencesData = [
     role: 'Frontend Developer',
     company: 'Trilogy Optic',
     description: [
-      'Contributed to e-commerce solutions using React and MERN Stack.',
-      'Designed user interfaces and integrated PayPal API for secure payments.',
-      'Improved customer engagement with responsive web design.'
+      'Developed e-commerce solutions using MERN stack.',
+      'Integrated secure payment systems with PayPal API.',
+      'Automated real-time updates for 4,000 products using Python & Selenium.',
+      'Led Shopify migration, scaling to 10,000+ product photos, boosting mobile traffic by 40% and conversions by 12%.'
     ],
     dateRange: 'October 2020 - June 2022',
     location: 'Bucharest, Romania',
