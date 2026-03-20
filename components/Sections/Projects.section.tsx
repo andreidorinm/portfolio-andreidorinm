@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Mousewheel } from 'swiper/modules';
 import projectsData from '../../lib/data/projectsData';
 import useRevealAnimation from "../../lib/hooks/useRevealAnimation";
 import 'swiper/css';
@@ -41,10 +41,10 @@ const Projects = () => {
   });
 
   useEffect(() => {
-    if (isMobile && swiperRef.current) {
-      const totalWidth = swiperRef.current.scrollWidth;
-      const visibleWidth = swiperRef.current.offsetWidth;
-      setScrollBarWidth((visibleWidth / totalWidth) * 100);
+    if (isMobile) {
+      // For mobile, calculate scrollbar width based on visible slides vs total slides
+      const scrollbarWidth = (1.5 / projectsData.length) * 100;
+      setScrollBarWidth(scrollbarWidth);
     }
   }, [isMobile]);
 
@@ -124,7 +124,7 @@ const Projects = () => {
           <div className={`card-back rounded-lg p-1 text-white bg-primary backdrop-blur-sm shadow-lg flex flex-col justify-center items-center ${clicked[index] ? 'flipped' : ''}`} onClick={() => handleFlipBack(index, project.url)} style={cardStyle}>
             {/* Icons */}
             {[0, 1, 2, 3].map((pos) => (
-              <div key={pos} className={`absolute ${pos % 2 === 0 ? 'top-2' : 'bottom-2'} ${pos < 2 ? 'left-2' : 'right-2'} tech-icon`}>
+              <div key={pos} className={`absolute ${pos % 2 === 0 ? 'top-2' : 'bottom-2'} ${pos < 2 ? 'left-2' : 'right-2'} tech-icon bg-white rounded-full p-1`}>
                 <Image
                   src={project.technologies[pos]}
                   alt="Tech Icon"
@@ -149,9 +149,20 @@ const Projects = () => {
     const scrollbar = document.getElementById('custom-scrollbar');
     if (scrollbar) {
       const progress = swiper.progress;
-      const position = progress * (428 - scrollBarWidth);
+      const maxTranslate = 100 - scrollBarWidth;
+      const position = (progress * maxTranslate) * 4;
       scrollbar.style.transform = `translateX(${position}%)`;
     }
+  };
+
+  const handleScrollbarClick = (e) => {
+    if (!swiperRef.current || !isMobile) return;
+    const scrollbarTrack = e.currentTarget;
+    const rect = scrollbarTrack.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const progress = clickX / rect.width;
+    const slideIndex = Math.round(progress * (projectsData.length - 1));
+    swiperRef.current.swiper.slideTo(slideIndex);
   };
 
   return (
@@ -162,16 +173,18 @@ const Projects = () => {
           <Swiper
             onProgress={updateScrollbarPosition}
             ref={swiperRef}
-            slidesPerView={'auto'}
+            slidesPerView={1}
             spaceBetween={10}
             centeredSlides={true}
+            initialSlide={0}
+            grabCursor={true}
             effect="coverflow"
             coverflowEffect={{
               rotate: 50,
               stretch: 0,
               depth: 100,
               modifier: 1,
-              slideShadows: true,
+              slideShadows: false,
             }}
             pagination={false}
             modules={[EffectCoverflow, Pagination]}
@@ -186,15 +199,52 @@ const Projects = () => {
             ))}
           </Swiper>
           <div className="relative w-full h-2 mt-2">
-            <div className="absolute top-0 left-0 right-0 h-2 mx-auto w-3/4 bg-gray-200 rounded-full">
-              <div id="custom-scrollbar" className="h-full bg-gray-600 rounded-full" style={{ width: `${scrollBarWidth}%` }}></div>
+            <div className="absolute top-0 left-0 right-0 h-2 mx-auto w-3/4 bg-gray-200 rounded-full cursor-pointer" onClick={handleScrollbarClick}>
+              <div id="custom-scrollbar" className="h-full bg-gray-600 rounded-full transition-transform duration-300" style={{ width: `${scrollBarWidth}%` }}></div>
             </div>
           </div>
-          <p className="text-sm text-gray-500 mt-2">Swipe horizontally to see more</p>
+          <p className="text-sm text-gray-500 mt-2">Swipe, scroll or tap scrollbar to navigate</p>
         </div>
       ) : (
-        <div className="my-8 flex flex-col items-center justify-center gap-10 sm:flex-row">
-          {projectsData.map(renderProjectCard)}
+        <div className="flex flex-col items-center">
+          <Swiper
+            onProgress={updateScrollbarPosition}
+            slidesPerView={3}
+            spaceBetween={30}
+            centeredSlides={true}
+            initialSlide={0}
+            grabCursor={true}
+            mousewheel={{
+              forceToAxis: true,
+              sensitivity: 0.5,
+              releaseOnEdges: true,
+            }}
+            effect="coverflow"
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: false,
+            }}
+            pagination={false}
+            modules={[EffectCoverflow, Pagination, Mousewheel]}
+            className="my-8 w-full max-w-6xl"
+          >
+            {projectsData.map((project, index) => (
+              <SwiperSlide key={index}>
+                <div className="flex justify-center">
+                  {renderProjectCard(project, index)}
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="relative w-full h-2 mt-2">
+            <div className="absolute top-0 left-0 right-0 h-2 mx-auto w-3/4 bg-gray-200 rounded-full">
+              <div id="custom-scrollbar" className="h-full bg-gray-600 rounded-full transition-transform duration-300" style={{ width: `${scrollBarWidth || 20}%` }}></div>
+            </div>
+          </div>
+          <p className="text-sm text-gray-500 mt-2">Drag or scroll to see more</p>
         </div>
       )}
     </div>

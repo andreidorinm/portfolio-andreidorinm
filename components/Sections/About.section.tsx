@@ -10,36 +10,38 @@ const About = () => {
       <div className="md:order-1">
         <p className="text-3xl font-bold text-white">Andrei Mihaila</p>
         <p className="mt-1 text-lg text-gray-300">
-          Frontend Developer | BCR
+          Full Stack Developer | Allianz
         </p>
         {/* Avatar Image for Mobile */}
-        <div className="mb-4 mt-4 md:hidden">
+        <div className="mb-4 mt-4 md:hidden w-32 h-32 bg-white rounded-full overflow-hidden">
           <Image
             src="/assets/avatar.jpeg"
-            width={112}
-            height={112}
-            className="rounded-full"
+            width={128}
+            height={128}
+            className="object-cover h-full"
+            style={{ objectPosition: 'center 30%', color: 'transparent', marginLeft: '20px', width: '70%' }}
             alt="avatar"
             loading="lazy"
           />
         </div>
         <div className="mt-4 text-gray-400 md:mt-1">
           <p>
-            Frontend Developer at BCR, adept in creating efficient, user-centric web applications.
+            Full Stack Developer at Allianz, building enterprise solutions with Spring Boot, Angular, and AI automations.
           </p>
           <p>
-            Passionate about learning and sharing tech insights.
+            Experienced with Claude Code and the entire development process from design to deployment.
           </p>
         </div>
       </div>
       <div className="flex flex-col items-center md:order-2">
         {/* Avatar Image for Desktop */}
-        <div className="mb-4 hidden md:block">
+        <div className="mb-4 hidden md:block w-32 h-32 bg-white rounded-full overflow-hidden">
           <Image
             src="/assets/avatar.jpeg"
-            width={112}
-            height={112}
-            className="rounded-full"
+            width={128}
+            height={128}
+            className="object-cover h-full"
+            style={{ objectPosition: 'center 30%', color: 'transparent', marginLeft: '20px', width: '70%' }}
             alt="avatar"
             priority
           />

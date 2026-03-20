@@ -26,11 +26,13 @@ const Experience = () => {
             <div className="flex-1 mt-4 md:mt-0 md:ml-10">
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
                 <div className="flex items-center text-slate-300">
-                  <Image src={experience.logoUrl} alt={`${experience.company} Logo`} width={40} height={40} className="mr-2" />
-                  <div className="flex flex-col md:flex-row md:items-center">
-                    <h4 ref={headerRefs.current[index]} className="text-lg sm:text-xl text-white mr-2">{experience.role} @ {experience.company}</h4>
-                    <div className="flex items-center gap-3 hidden md:flex ml-4">
-                      {experience.technologies.map((techLogoUrl, techIndex) => (
+                  <div className={`flex items-center justify-center flex-shrink-0 mr-2 ${experience.company === 'Allianz' ? 'w-20 h-20' : ''}`} style={experience.company === 'Allianz' ? { marginLeft: '-16px' } : { width: '52px', height: '52px' }}>
+                    <Image src={experience.logoUrl} alt={`${experience.company} Logo`} width={experience.company === 'Allianz' ? 80 : 52} height={experience.company === 'Allianz' ? 80 : 52} className="object-contain w-full h-full" />
+                  </div>
+                  <div className="flex flex-col md:flex-row md:items-center min-w-0">
+                    <h4 ref={headerRefs.current[index]} className="text-lg sm:text-xl text-white mr-2" style={experience.company === 'Allianz' ? { marginLeft: '-12px' } : {}}>{experience.role} @ {experience.company}</h4>
+                    <div className="flex items-center gap-3 hidden md:flex ml-4 flex-wrap max-w-xs">
+                      {experience.technologies.slice(0, 5).map((techLogoUrl, techIndex) => (
                         <Image key={techIndex} src={techLogoUrl} alt="Tech Logo" width={25} height={25} className="object-contain" />
                       ))}
                     </div>

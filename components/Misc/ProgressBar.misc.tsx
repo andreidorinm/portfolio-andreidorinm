@@ -15,7 +15,7 @@ const ProgressBar = ({ index, total, headerRefs }) => {
       if (index < total - 1 && progressBarRef.current) {
         const nextHeaderRef = headerRefs[index + 1];
         if (nextHeaderRef && nextHeaderRef.current) {
-          const offset = 42;
+          const offset = 60;
           const currentPosition = circleRef.current.getBoundingClientRect().top + window.scrollY;
           const nextPosition = nextHeaderRef.current.getBoundingClientRect().top + window.scrollY;
           const height = nextPosition - currentPosition - offset;
@@ -63,7 +63,7 @@ const ProgressBar = ({ index, total, headerRefs }) => {
   }, [index, total, headerRefs]);
 
   return (
-    <div style={{ position: 'relative', height: '100px', marginRight: '20px' }}>
+    <div style={{ position: 'relative', height: '100%', marginRight: '20px' }}>
       <div
         ref={circleRef}
         style={{ position: 'absolute', top: 0, left: 0, width: '20px', height: '20px', borderRadius: '50%', background: '#333', border: '3px solid #fff' }}
@@ -71,7 +71,7 @@ const ProgressBar = ({ index, total, headerRefs }) => {
       {index < total - 1 && (
         <div
           ref={progressBarRef}
-          style={{ position: 'absolute', top: '27px', left: '9px', width: '2px', background: '#fff', borderRadius: '5px', height: '0%' }}
+          style={{ position: 'absolute', top: '27px', left: '9px', width: '2px', background: '#fff', borderRadius: '5px', height: '0%', overflow: 'visible' }}
         />
       )}
     </div>

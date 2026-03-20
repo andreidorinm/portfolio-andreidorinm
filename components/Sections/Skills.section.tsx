@@ -10,11 +10,11 @@ const Skills = () => {
 
       <div className="my-8 flex flex-col font-medium text-md md:text-lg lg:text-xl">
         {[
-          { skill: "Angular 16", description: "for robust Frontend development" },
-          { skill: "RxJS", description: "for reactive programming in Angular" },
-          { skill: "Webpack", description: "for module federation and micro frontends" },
-          { skill: "AWS", description: "for cloud-based solutions and services" },
-          { skill: "SCSS", description: "for advanced styling solutions" },
+          { skill: "Spring Boot 3", description: "for enterprise microservices" },
+          { skill: "Java 17", description: "for backend development" },
+          { skill: "Angular 17", description: "for modern frontend development" },
+          { skill: "PostgreSQL", description: "for data persistence" },
+          { skill: "Docker & Kubernetes", description: "for container orchestration" },
         ].map(({ skill, description }, index) => (
           <div key={index} className="flex items-start sm:items-center border-b-[0.1px] border-gray-500 py-1">
             <div className="flex items-center justify-center mr-2">
@@ -28,11 +28,11 @@ const Skills = () => {
         ))}
 
         <p className="text-lg font-medium text-slate-300">
-          ...more skills include <span className="text-white">TypeScript</span>,{" "}
-          <span className="text-white">NextJS</span>,{" "}
-          <span className="text-white">Tailwind CSS</span>,{" "}
-          <span className="text-white">Bootstrap</span>,{" "}
-          <span className="text-white">Express JS</span>
+          ...more skills include <span className="text-white">RxJS</span>,{" "}
+          <span className="text-white">Jenkins</span>,{" "}
+          <span className="text-white">Maven</span>,{" "}
+          <span className="text-white">REST APIs</span>,{" "}
+          <span className="text-white">Webpack</span>
         </p>
       </div>
     </div>

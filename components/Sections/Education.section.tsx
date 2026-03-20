@@ -15,7 +15,7 @@ const Education = () => {
         <div key={index} ref={educationRefs[index]} className="text-md my-8 flex flex-col font-medium md:text-xl sm:text-lg">
           <div className="flex flex-col md:flex-row items-start">
             <div className="flex items-center mr-4 mt-2">
-              <Image loading='lazy' src={edu.logoUrl} alt={`${edu.institution} Logo`} width={40} height={40} />
+              <Image loading='lazy' src={edu.logoUrl} alt={`${edu.institution} Logo`} width={40} height={40} className="rounded-full object-cover" />
             </div>
             
             <div className="flex-1">
