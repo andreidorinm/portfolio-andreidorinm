@@ -1,5 +1,7 @@
+import { ReactElement } from 'react';
+
 interface iconProps {
-  icon: JSX.Element;
+  icon: ReactElement;
   url: string;
 }
 
