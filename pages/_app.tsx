@@ -29,12 +29,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         `}
       </Script>
       <Head>
-        <title>Andrei Mihaila | Frontend Developer</title>
-        <meta name="description" content="Hey! I'm Andrei Mihaila, A Frontend Developer specialized in Angular" />
-        <meta name="keywords" content="Frontend Developer, Web Developer, web development, web developer, tech enthusiast, open source" />
+        <title>Andrei Mihaila | Fullstack Developer</title>
+        <meta name="description" content="Hey! I'm Andrei Mihaila, A Fullstack Developer specialized in Angular" />
+        <meta name="keywords" content="Fullstack Developer, Web Developer, web development, web developer, tech enthusiast, open source" />
         <meta property="og:url" content="https://www.andreidorinm.com/" />
-        <meta property="og:title" content="Andrei Mihaila | Frontend Developer" />
-        <meta property="og:description" content="Hey! I'm Andrei Mihaila, A Frontend Developer specialized in Angular" />
+        <meta property="og:title" content="Andrei Mihaila | Fullstack Developer" />
+        <meta property="og:description" content="Hey! I'm Andrei Mihaila, A Fullstack Developer specialized in Angular" />
         <meta property="og:image" content="https://res.cloudinary.com/dlnywh1pc/image/upload/v1703544505/gradient_lam4wf.png" />
         <link rel="icon" type="image/png" href="/assets/bmo.jpg" />
       </Head>

@@ -1,6 +1,6 @@
 # Welcome to My Portfolio
 
-Hello! I'm Andrei Mihaila, a Frontend Developer specializing in creating efficient, user-centric web applications.
+Hello! I'm Andrei Mihaila, a Fullstack Developer specializing in creating efficient, user-centric web applications.
 
 ![Portfolio Demo](./public/assets/demo.png)
 
